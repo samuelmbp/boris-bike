@@ -8,4 +8,7 @@ class DockingStation
     def release_bike
         Bike.new
     end
+
+    def docking_bike
+    end
 end
