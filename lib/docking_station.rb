@@ -1,7 +1,6 @@
 require './lib/bike'
 
 class DockingStation
-    # attr_reader :xyz
 
     def release_bike
         Bike.new
@@ -11,3 +10,4 @@ class DockingStation
         return bike
     end
 end
+

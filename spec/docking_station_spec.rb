@@ -2,19 +2,19 @@
 require './lib/docking_station'
 
 describe DockingStation do
-  it "returns release bike" do
+  it 'returns a "release_bike" method' do
     expect(subject).to respond_to(:release_bike)
   end
 
-  it 'gets and expects a bike to be workig' do
+  it 'returns an instance of the Bike class when calling release_bike method' do
     expect(subject.release_bike).to be_an_instance_of(Bike)
   end
 
-  it 'docks a bike' do 
+  it 'returns a "docking_bike" method' do 
     expect(subject).to respond_to(:docking_bike)
   end
 
-  it 'docking bike returns the bike' do
+  it 'docking_bike takes a bike as an argument and returns the bike object' do
     bike = Bike.new
     expect(subject.docking_bike(bike)).to eq(bike)
   end
