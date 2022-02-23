@@ -1,14 +1,13 @@
 require './lib/bike'
 
 class DockingStation
-    # def initialize
-    #     @bike = Bike.new
-    # end
+    # attr_reader :xyz
 
     def release_bike
         Bike.new
     end
 
-    def docking_bike
+    def docking_bike(bike)
+        return bike
     end
 end
