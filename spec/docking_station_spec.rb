@@ -38,7 +38,7 @@ require './lib/docking_station'
 
     it 'raises an exception when we dock a bike when the docking station is full ' do
       bike = Bike.new
-      subject.docking_bike(bike)
+      20.times {subject.docking_bike(bike)}
       expect do
         subject.docking_bike(bike)
       end.to raise_error

@@ -1,26 +1,26 @@
 require './lib/bike'
 
 class DockingStation
-    attr_reader :bike
+    attr_reader :bikes
 
     def initialize
-        @bike = []
+        @bikes = []
     end
 
     def release_bike
-        if @bike.empty?
+        if @bikes.empty?
             raise Exception.new 
         else
-            return @bike.pop
+            return @bikes.pop
         end
     end
 
     def docking_bike(bike)
 
-        if @bike.length == 1
+        if @bikes.length >= 20
             raise Exception.new
         else
-            return @bike << bike
+            return @bikes << bike
         end
     end
 end
