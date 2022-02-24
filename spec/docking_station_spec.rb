@@ -35,5 +35,14 @@ require './lib/docking_station'
       subject.docking_bike(bike)
       expect(subject.release_bike).to eq(bike)
     end
+
+    it 'raises an exception when we dock a bike when the docking station is full ' do
+      bike = Bike.new
+      subject.docking_bike(bike)
+      expect do
+        subject.docking_bike(bike)
+      end.to raise_error
+    end
+
   end
 # end

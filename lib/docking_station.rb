@@ -16,7 +16,12 @@ class DockingStation
     end
 
     def docking_bike(bike)
-        return @bike << bike
+
+        if @bike.length == 1
+            raise Exception.new
+        else
+            return @bike << bike
+        end
     end
 end
 
