@@ -10,9 +10,9 @@ require './lib/docking_station'
     end
 
     it 'returns an instance of the Bike class when calling release_bike method' do
-      bike = Bike.new
+      bike = double(:bike)
       subject.docking_bike(bike)
-      expect(subject.release_bike).to be_an_instance_of(Bike)
+      expect(subject.release_bike).to eq(bike)
     end
 
     it 'returns a "docking_bike" method' do 
@@ -20,7 +20,7 @@ require './lib/docking_station'
     end
 
     it 'docking_bike takes a bike as an argument and returns the bike object' do
-      bike = Bike.new
+      bike = double(:bike)
       expect(subject.docking_bike(bike)).to eq([bike])
     end
 
@@ -31,13 +31,13 @@ require './lib/docking_station'
     end
 
     it 'releases a bike when one bike is docked' do
-      bike = Bike.new #(let acts as an instance for the bike class)
+      bike = double(:bike) #(let acts as an instance for the bike class)
       subject.docking_bike(bike)
       expect(subject.release_bike).to eq(bike)
     end
 
     it 'raises an exception when we dock a bike when the docking station is full ' do
-      bike = Bike.new
+      bike = double(:bike)
       20.times {subject.docking_bike(bike)}
       expect do
         subject.docking_bike(bike)
@@ -46,11 +46,9 @@ require './lib/docking_station'
 
 
     it 'returns a broken bike' do
-      bike = Bike.new(false)
+      bike = double(:bike)
       subject.docking_bike(bike)
       expect(subject.bikes).to eq([bike])
     end
-
-
   end
 # end
