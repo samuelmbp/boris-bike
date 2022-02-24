@@ -8,7 +8,7 @@ class DockingStation
     end
 
     def release_bike
-        if @bikes.empty?
+        if empty?
             raise Exception.new 
         else
             return @bikes.pop
@@ -17,11 +17,20 @@ class DockingStation
 
     def docking_bike(bike)
 
-        if @bikes.length >= 20
+        if full?
             raise Exception.new
         else
             return @bikes << bike
         end
     end
-end
 
+    private
+
+    def full?
+        @bikes.length >= 20 ? true : false
+    end
+
+    def empty?
+        @bikes.empty? ? true : false
+    end
+end
