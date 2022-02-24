@@ -16,6 +16,6 @@ describe DockingStation do
 
   it 'docking_bike takes a bike as an argument and returns the bike object' do
     bike = Bike.new
-    expect(subject.docking_bike(bike)).to eq(bike)
+    expect(subject.docking_bike(bike)).to eq([bike])
   end
 end
