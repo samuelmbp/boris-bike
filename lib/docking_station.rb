@@ -5,6 +5,7 @@ class DockingStation
 
     def initialize
         @bikes = []
+        @DEFAULT_CAPACITY = 20
     end
 
     def release_bike
@@ -25,9 +26,9 @@ class DockingStation
     end
 
     private
-
+    # Abstraction
     def full?
-        @bikes.length >= 20 ? true : false
+        @bikes.length >= @DEFAULT_CAPACITY ? true : false
     end
 
     def empty?
