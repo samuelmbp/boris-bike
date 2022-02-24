@@ -6,6 +6,7 @@ class DockingStation
     def initialize
         @bikes = []
         @DEFAULT_CAPACITY = 20
+        @broken_bikes = []
     end
 
     def release_bike
@@ -23,6 +24,10 @@ class DockingStation
         else
             return @bikes << bike
         end
+    end
+
+    def docking_broken_bike(bike)
+        @broken_bikes << bike
     end
 
     private

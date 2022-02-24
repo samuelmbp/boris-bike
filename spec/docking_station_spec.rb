@@ -44,5 +44,14 @@ require './lib/docking_station'
       end.to raise_error
     end
 
+    it 'responds to a broken bike' do
+      expect(subject).to respond_to(:docking_broken_bike)
+    end
+
+    it 'returns a broken bike' do
+      bike = Bike.new
+      expect(subject.docking_broken_bike(bike)).to eq([bike])
+    end
+
   end
 # end
