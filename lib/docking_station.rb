@@ -25,6 +25,18 @@ class DockingStation
         end
     end
 
+    def gives_bikes
+        broken_bikes_to_be_given = []
+        @bikes.each do |bike|
+            if !bike.working?
+                broken_bikes_to_be_given << bike
+                @bikes.delete(bike)
+            end
+
+            return broken_bikes_to_be_given
+        end
+    end
+
     private
     # Abstraction
     def full?
